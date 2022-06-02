@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowPerson</title>
+</head>
+<body>
+
+<p th:text="${'Name: ' + person.getName()}"></p>
+<p th:text="${'Age: ' + person.getAge()}"></p>
+<p th:text="${'Salary: ' + person.getSalary()}"></p>
+<p th:text="${'Email: ' + person.getEmail()}"></p>
+<a th:href="@{/person/patch/{id}(id=${person.getId()})}">Change person</a>
+<br/>
+<hr/>
+<form th:method="DELETE" th:action="@{/person/{id}(id=${person.getId()})}">
+    <input type="submit" value="Delete him!"/>
+</form>
+
+</body>
+</html>
